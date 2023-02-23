@@ -23,49 +23,169 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+            ),
+            drawer: Drawer(
+              // Add a ListView to the drawer. This ensures the user can scroll
+              // through the options in the drawer if there isn't enough vertical
+              // space to fit everything.
+              child: ListView(
+                // Important: Remove any padding from the ListView.
+                padding: EdgeInsets.zero,
+                children: [
+                  const DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                    ),
+                    child: Text('Menu'),
+                  ),
+                  ListTile(
+                    title: const Text('Home'),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Request Nurse'),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Meal Plan'),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Schedule'),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Settings'),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+            ),
             body: Center(
-      child: Column(children: <Widget>[
-        Container(
-          margin: const EdgeInsets.all(25),
-          child: ElevatedButton(
-            child: const Text(
-              'Request Nurse',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            onPressed: () {},
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.all(25),
-          child: ElevatedButton(
-            child: const Text(
-              'Meal Plan',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            onPressed: () {},
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.all(25),
-          child: ElevatedButton(
-            child: const Text(
-              'Schedule',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            onPressed: () {},
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.all(25),
-          child: ElevatedButton(
-            child: const Text(
-              'Settings',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            onPressed: () {},
-          ),
-        )
-      ]),
-    )));
+              child: Column(children: <Widget>[
+                const Text("Home"),
+                Container(
+                  margin: const EdgeInsets.all(25),
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Request Nurse',
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(25),
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Meal Plan',
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(25),
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Schedule',
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(25),
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Settings',
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    onPressed: () {},
+                  ),
+                )
+              ]),
+            )));
   }
 }
+
+// class MenuBar extends StatefulWidget {
+//   const MenuBar({Key? key}) : super(key: key);
+
+//   @override
+//   _MenuBarState createState() => _MenuBarState();
+// }
+
+// class _MenuBarState extends State<MenuBar> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Hello")),
+//       body: const Center(
+//         child: Text('My Page!'),
+//       ),
+//       drawer: Drawer(
+//         // Add a ListView to the drawer. This ensures the user can scroll
+//         // through the options in the drawer if there isn't enough vertical
+//         // space to fit everything.
+//         child: ListView(
+//           // Important: Remove any padding from the ListView.
+//           padding: EdgeInsets.zero,
+//           children: [
+//             const DrawerHeader(
+//               decoration: BoxDecoration(
+//                 color: Colors.blue,
+//               ),
+//               child: Text('Drawer Header'),
+//             ),
+//             ListTile(
+//               title: const Text('Item 1'),
+//               onTap: () {
+//                 // Update the state of the app
+//                 // ...
+//                 // Then close the drawer
+//                 Navigator.pop(context);
+//               },
+//             ),
+//             ListTile(
+//               title: const Text('Item 2'),
+//               onTap: () {
+//                 // Update the state of the app
+//                 // ...
+//                 // Then close the drawer
+//                 Navigator.pop(context);
+//               },
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+  // }
+// }
