@@ -114,7 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       'Request Nurse',
                       style: TextStyle(fontSize: 20.0),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      requestNurseAlertDialog(context);
+                    },
                   ),
                 ),
                 Container(
