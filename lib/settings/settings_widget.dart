@@ -24,8 +24,8 @@ class _SettingsPageState extends State<SettingsPage> {
     return MaterialApp(
       home: Scaffold(
           body: Center(
-              child: Column(children: <Widget>[
-        const Text("Settings"),
+              child: Column(children: const <Widget>[
+        Text("Settings"),
       ]))),
     );
   }
