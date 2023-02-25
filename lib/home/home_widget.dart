@@ -120,11 +120,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ElevatedButton(
                     child: const Text(
                       'Request Nurse',
-                      style: TextStyle(fontSize: 20.0),
                     ),
                     onPressed: () {
                       requestNurseAlertDialog(context);
                     },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        textStyle: const TextStyle(fontSize: 20)),
                   ),
                 ),
                 Container(
@@ -135,6 +137,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(fontSize: 20.0),
                     ),
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromRGBO(42, 178, 232, 1),
+                        textStyle: const TextStyle(fontSize: 20)),
                   ),
                 ),
                 Container(
@@ -145,6 +150,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(fontSize: 20.0),
                     ),
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 170, 32, 250),
+                        textStyle: const TextStyle(fontSize: 20)),
                   ),
                 ),
                 Container(
@@ -155,16 +163,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(fontSize: 20.0),
                     ),
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 89, 255, 172),
+                        textStyle: const TextStyle(fontSize: 20)),
                   ),
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
+                  height: 50,
+                  width: 250,
                   child: ElevatedButton(
-                    child: const Text(
-                      'Settings',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
+                    child: const Text('Settings',
+                        style: TextStyle(fontSize: 20.0)),
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(205, 245, 237, 0),
+                        textStyle: const TextStyle(fontSize: 20)),
                   ),
                 )
               ]),
