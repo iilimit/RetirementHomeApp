@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/login/login_widget.dart';
+import 'package:project_1/settings/settings_widget.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -46,7 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       // Update the state of the app
                       // ...
                       // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MyHomePage(
+                                  title: 'Home Page',
+                                )),
+                      );
                     },
                   ),
                   ListTile(
@@ -82,7 +90,28 @@ class _MyHomePageState extends State<MyHomePage> {
                       // Update the state of the app
                       // ...
                       // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SettingsPage(
+                                  title: 'Settings',
+                                )),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Logout'),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage(
+                                  title: 'Logout',
+                                )),
+                      );
                     },
                   ),
                 ],

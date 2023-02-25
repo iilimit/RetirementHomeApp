@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/home/home_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -50,7 +51,18 @@ class _LoginPageState extends State<LoginPage> {
               'Login',
               style: TextStyle(fontSize: 20.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MyHomePage(
+                          title: 'Home Page',
+                        )),
+              );
+            },
           ),
         ),
         const Text("OR"),
