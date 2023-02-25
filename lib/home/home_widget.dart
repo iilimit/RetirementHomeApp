@@ -75,6 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   ListTile(
+                    title: const Text('Messages'),
+                    onTap: () {
+                      // Update the state of the app
+                      // ...
+                      // Then close the drawer
+                    },
+                  ),
+                  ListTile(
                     title: const Text('Schedule'),
                     onTap: () {
                       // Update the state of the app
@@ -124,6 +132,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ElevatedButton(
                     child: const Text(
                       'Meal Plan',
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(25),
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Messages',
                       style: TextStyle(fontSize: 20.0),
                     ),
                     onPressed: () {},
