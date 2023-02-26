@@ -65,11 +65,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   margin: const EdgeInsets.all(25),
                   height: 50,
                   width: 250,
-                  child: ElevatedButton(
-                    child: const Text(
-                      'Messages',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
+                  child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            const Color.fromARGB(255, 170, 32, 250),
+                        textStyle: buttonTextStyle),
+                    icon: const Icon(Icons.message),
+                    label: const Text('Messages'),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -79,39 +81,49 @@ class _MyHomePageState extends State<MyHomePage> {
                                 )),
                       );
                     },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            const Color.fromARGB(255, 170, 32, 250),
-                        textStyle: const TextStyle(fontSize: 20)),
                   ),
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
                   height: 50,
                   width: 250,
-                  child: ElevatedButton(
-                    child: const Text(
-                      'Schedule',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                    onPressed: () {},
+                  child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         backgroundColor:
                             const Color.fromARGB(255, 89, 255, 172),
-                        textStyle: const TextStyle(fontSize: 20)),
+                        textStyle: buttonTextStyle),
+                    icon: const Icon(Icons.calendar_month),
+                    label: const Text('Schedule'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MessagesPage(
+                                  title: 'Messages Page',
+                                )),
+                      );
+                    },
                   ),
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
                   height: 50,
                   width: 250,
-                  child: ElevatedButton(
-                    child: const Text('Settings',
-                        style: TextStyle(fontSize: 20.0)),
-                    onPressed: () {},
+                  child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(205, 245, 237, 0),
-                        textStyle: const TextStyle(fontSize: 20)),
+                        textStyle: buttonTextStyle),
+                    icon: const Icon(Icons.settings),
+                    label: const Text('Settings'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MessagesPage(
+                                  title: 'Settings Page',
+                                )),
+                      );
+                    },
                   ),
                 )
               ]),
