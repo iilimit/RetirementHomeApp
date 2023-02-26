@@ -28,6 +28,11 @@ class _MyHomePageState extends State<MyHomePage> {
         home: Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,
+              centerTitle: true,
+              title: const Text("Hello User"),
+              actions: [
+                IconButton(icon: const Icon(Icons.person_4), onPressed: () {})
+              ],
             ),
             drawer: const NavigationMenu(),
             body: Center(
