@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/messages/messages_widget.dart';
 import '../navigation/navigationbar_widget.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -22,12 +23,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var buttonTextStyle = const TextStyle(fontSize: 20);
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,
             ),
-            drawer: NavigationMenu(),
+            drawer: const NavigationMenu(),
             body: Center(
               child: Column(children: <Widget>[
                 const Text("Home"),
@@ -35,30 +37,30 @@ class _MyHomePageState extends State<MyHomePage> {
                   margin: const EdgeInsets.all(25),
                   height: 50,
                   width: 250,
-                  child: ElevatedButton(
-                    child: const Text(
-                      'Request Nurse',
-                    ),
-                    onPressed: () {
-                      requestNurseAlertDialog(context);
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
-                        textStyle: const TextStyle(fontSize: 20)),
-                  ),
+                  child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          textStyle: buttonTextStyle),
+                      icon: const Icon(Icons.home),
+                      label: const Text('Request Nurse'),
+                      onPressed: () {
+                        requestNurseAlertDialog(context);
+                      }),
                 ),
                 Container(
-                  margin: const EdgeInsets.all(25),
-                  height: 50,
-                  width: 250,
-                  child: ElevatedButton(
-                      child: const Text('Meal Plan',
-                          style: TextStyle(fontSize: 20.0)),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromRGBO(42, 178, 232, 1),
-                          textStyle: const TextStyle(fontSize: 20))),
-                ),
+                    margin: const EdgeInsets.all(25),
+                    height: 50,
+                    width: 250,
+                    child: ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromRGBO(42, 178, 232, 1),
+                            textStyle: buttonTextStyle),
+                        icon: const Icon(Icons.food_bank),
+                        label: const Text('Meal Plan'),
+                        onPressed: () {
+                          requestNurseAlertDialog(context);
+                        })),
                 Container(
                   margin: const EdgeInsets.all(25),
                   height: 50,
@@ -68,9 +70,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       'Messages',
                       style: TextStyle(fontSize: 20.0),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MessagesPage(
+                                  title: 'Messages Page',
+                                )),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 170, 32, 250),
+                        backgroundColor:
+                            const Color.fromARGB(255, 170, 32, 250),
                         textStyle: const TextStyle(fontSize: 20)),
                   ),
                 ),
@@ -85,7 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 89, 255, 172),
+                        backgroundColor:
+                            const Color.fromARGB(255, 89, 255, 172),
                         textStyle: const TextStyle(fontSize: 20)),
                   ),
                 ),
@@ -98,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(fontSize: 20.0)),
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(205, 245, 237, 0),
+                        backgroundColor: const Color.fromARGB(205, 245, 237, 0),
                         textStyle: const TextStyle(fontSize: 20)),
                   ),
                 )
@@ -106,58 +118,3 @@ class _MyHomePageState extends State<MyHomePage> {
             )));
   }
 }
-
-
-// class MenuBar extends StatefulWidget {
-//   const MenuBar({Key? key}) : super(key: key);
-
-//   @override
-//   _MenuBarState createState() => _MenuBarState();
-// }
-
-// class _MenuBarState extends State<MenuBar> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text("Hello")),
-//       body: const Center(
-//         child: Text('My Page!'),
-//       ),
-//       drawer: Drawer(
-//         // Add a ListView to the drawer. This ensures the user can scroll
-//         // through the options in the drawer if there isn't enough vertical
-//         // space to fit everything.
-//         child: ListView(
-//           // Important: Remove any padding from the ListView.
-//           padding: EdgeInsets.zero,
-//           children: [
-//             const DrawerHeader(
-//               decoration: BoxDecoration(
-//                 color: Colors.blue,
-//               ),
-//               child: Text('Drawer Header'),
-//             ),
-//             ListTile(
-//               title: const Text('Item 1'),
-//               onTap: () {
-//                 // Update the state of the app
-//                 // ...
-//                 // Then close the drawer
-//                 Navigator.pop(context);
-//               },
-//             ),
-//             ListTile(
-//               title: const Text('Item 2'),
-//               onTap: () {
-//                 // Update the state of the app
-//                 // ...
-//                 // Then close the drawer
-//                 Navigator.pop(context);
-//               },
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-  // }
-// }

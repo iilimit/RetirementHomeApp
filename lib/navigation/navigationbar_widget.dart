@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../home/home_widget.dart';
 import '../login/login_widget.dart';
+import '../messages/messages_widget.dart';
 
 class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
   const NavigationMenu({
@@ -59,9 +60,13 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
           ListTile(
             title: const Text('Messages'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MessagesPage(
+                          title: 'Messages Page',
+                        )),
+              );
             },
           ),
           ListTile(
@@ -181,7 +186,7 @@ requestNurseEmergencyAlertDialog(BuildContext context) {
 requestNurseConfirmationAlertDialog(BuildContext context) {
   // set up the button
   Widget okButton = TextButton(
-    child: Text("OK"),
+    child: const Text("OK"),
     onPressed: () {
       Navigator.pop(context);
     },
@@ -189,8 +194,8 @@ requestNurseConfirmationAlertDialog(BuildContext context) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Confirmed"),
-    content: Text("A nurse will be with you shortly!"),
+    title: const Text("Confirmed"),
+    content: const Text("A nurse will be with you shortly!"),
     actions: [
       okButton,
     ],
