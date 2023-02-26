@@ -117,6 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Text("Home"),
                 Container(
                   margin: const EdgeInsets.all(25),
+                  height: 50,
+                  width: 250,
                   child: ElevatedButton(
                     child: const Text(
                       'Request Nurse',
@@ -131,19 +133,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
+                  height: 50,
+                  width: 250,
                   child: ElevatedButton(
-                    child: const Text(
-                      'Meal Plan',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(42, 178, 232, 1),
-                        textStyle: const TextStyle(fontSize: 20)),
-                  ),
+                      child: const Text('Meal Plan',
+                          style: TextStyle(fontSize: 20.0)),
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromRGBO(42, 178, 232, 1),
+                          textStyle: const TextStyle(fontSize: 20))),
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
+                  height: 50,
+                  width: 250,
                   child: ElevatedButton(
                     child: const Text(
                       'Messages',
@@ -157,6 +160,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
+                  height: 50,
+                  width: 250,
                   child: ElevatedButton(
                     child: const Text(
                       'Schedule',
