@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red,
                           textStyle: buttonTextStyle),
-                      icon: const Icon(Icons.home),
+                      icon: const Icon(Icons.medical_services_rounded),
                       label: const Text('Request Nurse'),
                       onPressed: () {
                         requestNurseAlertDialog(context);
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const MessagesPage(
-                                  title: 'Messages Page',
+                                  title: 'Schedule Page',
                                 )),
                       );
                     },

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../home/home_widget.dart';
 import '../login/login_widget.dart';
 import '../messages/messages_widget.dart';
@@ -23,14 +22,12 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-            child: Text('Menu'),
+            child: Text(''),
           ),
           ListTile(
+            leading: const Icon(Icons.home),
             title: const Text('Home'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -41,23 +38,19 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.medical_services_rounded),
             title: const Text('Request Nurse'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
               requestNurseAlertDialog(context);
             },
           ),
           ListTile(
+            leading: const Icon(Icons.food_bank),
             title: const Text('Meal Plan'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-            },
+            onTap: () {},
           ),
           ListTile(
+            leading: const Icon(Icons.message),
             title: const Text('Messages'),
             onTap: () {
               Navigator.push(
@@ -70,18 +63,17 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.calendar_month),
             title: const Text('Schedule'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-            },
+            onTap: () {},
           ),
           ListTile(
+            leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {},
           ),
           ListTile(
+            leading: const Icon(Icons.logout),
             title: const Text('Logout'),
             onTap: () {
               // Update the state of the app
