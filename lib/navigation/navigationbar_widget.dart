@@ -38,7 +38,7 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.medical_services_rounded),
+            leading: const Icon(Icons.person),
             title: const Text('Request Nurse'),
             onTap: () {
               requestNurseAlertDialog(context);

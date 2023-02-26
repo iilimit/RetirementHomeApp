@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red,
                           textStyle: buttonTextStyle),
-                      icon: const Icon(Icons.medical_services_rounded),
+                      icon: const Icon(Icons.person),
                       label: const Text('Request Nurse'),
                       onPressed: () {
                         requestNurseAlertDialog(context);
