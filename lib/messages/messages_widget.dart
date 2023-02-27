@@ -15,14 +15,14 @@ class _MessagesPageState extends State<MessagesPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: Navigation_AppBar(),
-      drawer: NavigationMenu(),
+      appBar: const Navigation_AppBar(),
+      drawer: const NavigationMenu(),
       body: Column(
         children: [
           Expanded(child: Container()),
           Container(
             color: Colors.grey,
-            child: TextField(
+            child: const TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: "Type your message here.."),

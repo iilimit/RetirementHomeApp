@@ -30,7 +30,6 @@ class _MyHomePageState extends State<MyHomePage> {
             drawer: const NavigationMenu(),
             body: Center(
               child: Column(children: <Widget>[
-                const Text("Home"),
                 Container(
                   margin: const EdgeInsets.all(25),
                   height: 50,

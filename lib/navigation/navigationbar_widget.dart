@@ -11,11 +11,7 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      // Add a ListView to the drawer. This ensures the user can scroll
-      // through the options in the drawer if there isn't enough vertical
-      // space to fit everything.
       child: ListView(
-        // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
@@ -76,9 +72,6 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
             leading: const Icon(Icons.logout),
             title: const Text('Logout'),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -117,7 +110,6 @@ class Navigation_AppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 requestNurseAlertDialog(BuildContext context) {
-  // set up the buttons
   Widget cancelButton = TextButton(
     child: const Text("Cancel"),
     onPressed: () {
@@ -132,7 +124,6 @@ requestNurseAlertDialog(BuildContext context) {
     },
   );
 
-  // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: const Text("Request nurse"),
     content: const Text("Would you like to request a nurse?"),
@@ -142,7 +133,6 @@ requestNurseAlertDialog(BuildContext context) {
     ],
   );
 
-  // show the dialog
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -152,7 +142,6 @@ requestNurseAlertDialog(BuildContext context) {
 }
 
 requestNurseEmergencyAlertDialog(BuildContext context) {
-  // set up the buttons
   Widget cancelButton = TextButton(
     child: const Text("Cancel"),
     onPressed: () {
@@ -174,7 +163,6 @@ requestNurseEmergencyAlertDialog(BuildContext context) {
     },
   );
 
-  // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: const Text("Confirm request..."),
     content: const Text("Is this an emergency?"),
@@ -185,7 +173,6 @@ requestNurseEmergencyAlertDialog(BuildContext context) {
     ],
   );
 
-  // show the dialog
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -195,7 +182,6 @@ requestNurseEmergencyAlertDialog(BuildContext context) {
 }
 
 requestNurseConfirmationAlertDialog(BuildContext context) {
-  // set up the button
   Widget okButton = TextButton(
     child: const Text("OK"),
     onPressed: () {
@@ -203,7 +189,6 @@ requestNurseConfirmationAlertDialog(BuildContext context) {
     },
   );
 
-  // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: const Text("Confirmed"),
     content: const Text("A nurse will be with you shortly!"),
@@ -212,7 +197,6 @@ requestNurseConfirmationAlertDialog(BuildContext context) {
     ],
   );
 
-  // show the dialog
   showDialog(
     context: context,
     builder: (BuildContext context) {
