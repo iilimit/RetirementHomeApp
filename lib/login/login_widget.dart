@@ -26,6 +26,10 @@ class _LoginPageState extends State<LoginPage> {
       home: Scaffold(
           body: Center(
               child: Column(children: <Widget>[
+        // Image.asset(
+        //   "assets/images/undraw_fireworks_re_2xi7.png",
+        //   // scale: 80,
+        // ),
         const Text("Username"),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
@@ -45,8 +49,15 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
         Container(
+          height: 50,
+          width: 150,
           margin: const EdgeInsets.all(25),
           child: ElevatedButton(
+            style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
+            ))),
             child: const Text(
               'Login',
               style: TextStyle(fontSize: 20.0),
@@ -67,8 +78,15 @@ class _LoginPageState extends State<LoginPage> {
         ),
         const Text("OR"),
         Container(
+          height: 50,
+          width: 150,
           margin: const EdgeInsets.all(25),
           child: ElevatedButton(
+            style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
+            ))),
             child: const Text(
               'Signup',
               style: TextStyle(fontSize: 20.0),

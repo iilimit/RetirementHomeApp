@@ -26,14 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var buttonTextStyle = const TextStyle(fontSize: 20);
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              centerTitle: true,
-              title: const Text("Hello User"),
-              actions: [
-                IconButton(icon: const Icon(Icons.person_4), onPressed: () {})
-              ],
-            ),
+            appBar: Navigation_AppBar(),
             drawer: const NavigationMenu(),
             body: Center(
               child: Column(children: <Widget>[

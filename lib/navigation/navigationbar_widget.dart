@@ -97,6 +97,25 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(60.0);
 }
 
+class Navigation_AppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => const Size.fromHeight(60.0);
+
+  const Navigation_AppBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      centerTitle: true,
+      title: const Text(""),
+      actions: [IconButton(icon: const Icon(Icons.person_4), onPressed: () {})],
+    );
+  }
+}
+
 requestNurseAlertDialog(BuildContext context) {
   // set up the buttons
   Widget cancelButton = TextButton(
