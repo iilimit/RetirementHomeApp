@@ -13,17 +13,23 @@ class MessagesPage extends StatefulWidget {
 class _MessagesPageState extends State<MessagesPage> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
         home: Scaffold(
       appBar: Navigation_AppBar(),
       drawer: NavigationMenu(),
-      body: Center(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-        child: TextField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(), labelText: "Send a message")),
-      )),
+      body: Column(
+        children: [
+          Expanded(child: Container()),
+          Container(
+            color: Colors.grey,
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Type your message here.."),
+            ),
+          )
+        ],
+      ),
     ));
   }
 }
