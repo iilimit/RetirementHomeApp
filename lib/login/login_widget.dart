@@ -25,20 +25,22 @@ class _LoginPageState extends State<LoginPage> {
         ),
         const SizedBox(height: 20),
         const Text("Username"),
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextField(
             decoration: InputDecoration(
-              border: OutlineInputBorder(),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
             ),
           ),
         ),
         const Text("Password"),
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextField(
             decoration: InputDecoration(
-              border: OutlineInputBorder(),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
             ),
           ),
         ),
@@ -48,10 +50,12 @@ class _LoginPageState extends State<LoginPage> {
           margin: const EdgeInsets.all(25),
           child: ElevatedButton(
             style: ButtonStyle(
+                backgroundColor: const MaterialStatePropertyAll<Color>(
+                    Color.fromARGB(255, 91, 88, 255)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(18.0),
-            ))),
+                  borderRadius: BorderRadius.circular(30.0),
+                ))),
             child: const Text(
               'Login',
               style: TextStyle(fontSize: 20.0),
@@ -67,17 +71,22 @@ class _LoginPageState extends State<LoginPage> {
             },
           ),
         ),
-        const Text("OR"),
+        const Text(
+          "--------OR--------",
+          style: TextStyle(fontSize: 16),
+        ),
         Container(
           height: 50,
           width: 150,
           margin: const EdgeInsets.all(25),
           child: ElevatedButton(
             style: ButtonStyle(
+                backgroundColor:
+                    const MaterialStatePropertyAll<Color>(Color(0xFFC331EB)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(18.0),
-            ))),
+                  borderRadius: BorderRadius.circular(30.0),
+                ))),
             child: const Text(
               'Signup',
               style: TextStyle(fontSize: 20.0),
