@@ -11,7 +11,7 @@ class MessagesPage extends StatefulWidget {
 }
 
 class _MessagesPageState extends State<MessagesPage> {
-  List<String> messages = [];
+  List<String> messages = ["Good morning Grandma!"];
   TextEditingController messageController = TextEditingController();
 
   void sendMessage() {
@@ -45,6 +45,7 @@ class _MessagesPageState extends State<MessagesPage> {
               children: <Widget>[
                 Expanded(
                   child: TextField(
+                    textInputAction: TextInputAction.go,
                     controller: messageController,
                     decoration: const InputDecoration(
                       hintText: "Type your message here..",

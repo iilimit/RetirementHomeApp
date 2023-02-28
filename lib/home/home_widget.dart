@@ -21,6 +21,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final roundedRectShape =
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0));
   @override
   Widget build(BuildContext context) {
     var buttonTextStyle = const TextStyle(fontSize: 20);
@@ -36,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 250,
                   child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
+                          shape: roundedRectShape,
                           backgroundColor: Colors.red,
                           textStyle: buttonTextStyle),
                       icon: const Icon(Icons.person),
@@ -50,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 250,
                     child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
+                            shape: roundedRectShape,
                             backgroundColor:
                                 const Color.fromRGBO(42, 178, 232, 1),
                             textStyle: buttonTextStyle),
@@ -64,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 250,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
+                        shape: roundedRectShape,
                         backgroundColor:
                             const Color.fromARGB(255, 170, 32, 250),
                         textStyle: buttonTextStyle),
@@ -86,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 250,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
+                        shape: roundedRectShape,
                         backgroundColor:
                             const Color.fromARGB(255, 89, 255, 172),
                         textStyle: buttonTextStyle),
@@ -108,6 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 250,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
+                        shape: roundedRectShape,
                         backgroundColor: const Color.fromARGB(205, 245, 237, 0),
                         textStyle: buttonTextStyle),
                     icon: const Icon(Icons.settings),
