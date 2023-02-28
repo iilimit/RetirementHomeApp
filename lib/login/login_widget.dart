@@ -16,6 +16,14 @@ class _LoginPageState extends State<LoginPage> {
       home: Scaffold(
           body: Center(
               child: Column(children: <Widget>[
+        const SizedBox(height: 30),
+        // ignore: unnecessary_new
+        new Image.asset(
+          'assets/images/login page image.png',
+          height: 190.0,
+          fit: BoxFit.cover,
+        ),
+        const SizedBox(height: 20),
         const Text("Username"),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
