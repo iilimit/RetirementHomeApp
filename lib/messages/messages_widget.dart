@@ -10,13 +10,6 @@ class MessagesPage extends StatefulWidget {
   State<MessagesPage> createState() => _MessagesPageState();
 }
 
-// import 'package:flutter/material.dart';
-
-// class MessagesApp extends StatefulWidget {
-//   @override
-//   _MessagesPageState createState() => _MessagesPageState();
-// }
-
 class _MessagesPageState extends State<MessagesPage> {
   List<String> messages = [];
   TextEditingController messageController = TextEditingController();
@@ -71,27 +64,3 @@ class _MessagesPageState extends State<MessagesPage> {
     );
   }
 }
-
-// class _MessagesPageState extends State<MessagesPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//         home: Scaffold(
-//       appBar: const Navigation_AppBar(),
-//       drawer: const NavigationMenu(),
-//       body: Column(
-//         children: [
-//           Expanded(child: Container()),
-//           Container(
-//             color: Colors.grey,
-//             child: const TextField(
-//               decoration: InputDecoration(
-//                   border: OutlineInputBorder(),
-//                   hintText: "Type your message here.."),
-//             ),
-//           )
-//         ],
-//       ),
-//     ));
-//   }
-// }
