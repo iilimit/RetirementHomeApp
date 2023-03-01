@@ -24,7 +24,7 @@ class _MessagesPageState extends State<MessagesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Navigation_AppBar(),
+      appBar: const NavigationAppBar(),
       drawer: const NavigationMenu(),
       body: Column(
         children: <Widget>[

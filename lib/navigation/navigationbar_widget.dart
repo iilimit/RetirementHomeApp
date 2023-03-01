@@ -90,11 +90,10 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(60.0);
 }
 
-class Navigation_AppBar extends StatelessWidget implements PreferredSizeWidget {
+class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(60.0);
-
-  const Navigation_AppBar({
+  const NavigationAppBar({
     super.key,
   });
 

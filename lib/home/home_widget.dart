@@ -5,15 +5,6 @@ import '../navigation/navigationbar_widget.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -28,13 +19,18 @@ class _MyHomePageState extends State<MyHomePage> {
     var buttonTextStyle = const TextStyle(fontSize: 20);
     return MaterialApp(
         home: Scaffold(
-            appBar: Navigation_AppBar(),
+            appBar: const NavigationAppBar(),
             drawer: const NavigationMenu(),
             body: Center(
               child: Column(children: <Widget>[
+                Image.asset(
+                  'assets/images/home page image.png',
+                  height: 120.0,
+                  fit: BoxFit.cover,
+                ),
                 Container(
                   margin: const EdgeInsets.all(25),
-                  height: 50,
+                  height: 45,
                   width: 250,
                   child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
@@ -49,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                     margin: const EdgeInsets.all(25),
-                    height: 50,
+                    height: 45,
                     width: 250,
                     child: ElevatedButton.icon(
                         style: ElevatedButton.styleFrom(
@@ -64,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         })),
                 Container(
                   margin: const EdgeInsets.all(25),
-                  height: 50,
+                  height: 45,
                   width: 250,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
@@ -87,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
-                  height: 50,
+                  height: 45,
                   width: 250,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
@@ -110,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   margin: const EdgeInsets.all(25),
-                  height: 50,
+                  height: 45,
                   width: 250,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
