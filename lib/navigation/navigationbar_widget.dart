@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import '../home/home_widget.dart';
 import '../login/login_widget.dart';
@@ -94,9 +96,8 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(60.0);
-  const NavigationAppBar({
-    super.key,
-  });
+  final String title;
+  const NavigationAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

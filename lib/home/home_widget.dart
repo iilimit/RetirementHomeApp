@@ -20,7 +20,9 @@ class _MyHomePageState extends State<MyHomePage> {
     var buttonTextStyle = const TextStyle(fontSize: 20);
     return MaterialApp(
         home: Scaffold(
-            appBar: const NavigationAppBar(),
+            appBar: const NavigationAppBar(
+              title: 'Home',
+            ),
             drawer: const NavigationMenu(),
             body: Center(
               child: Column(children: <Widget>[
