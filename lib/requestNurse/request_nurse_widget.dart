@@ -7,19 +7,29 @@ void requestNurseAlertDialog(BuildContext context) {
       Navigator.of(context).pop();
     },
   );
-  Widget continueButton = TextButton(
-    child: const Text("Yes"),
+
+  Widget continue2Button = TextButton(
+    child: const Text("Non-Emergency"),
     onPressed: () {
       Navigator.of(context).pop();
-      requestNurseEmergencyAlertDialog(context);
+      requestNurseConfirmationAlertDialog(context);
+    },
+  );
+
+  Widget continueButton = TextButton(
+    child: const Text("Emergency"),
+    onPressed: () {
+      Navigator.of(context).pop();
+      requestNurseConfirmationAlertDialog(context);
     },
   );
 
   AlertDialog alert = AlertDialog(
     title: const Text("Request nurse"),
-    content: const Text("Would you like to request a nurse?"),
+    content: const Text("Select a option"),
     actions: [
       cancelButton,
+      continue2Button,
       continueButton,
     ],
   );
@@ -32,45 +42,45 @@ void requestNurseAlertDialog(BuildContext context) {
   );
 }
 
-void requestNurseEmergencyAlertDialog(BuildContext context) {
-  Widget cancelButton = TextButton(
-    child: const Text("Cancel"),
-    onPressed: () {
-      Navigator.of(context).pop();
-    },
-  );
-  Widget noButton = TextButton(
-    child: const Text("No"),
-    onPressed: () {
-      Navigator.of(context).pop();
-      requestNurseConfirmationAlertDialog(context);
-    },
-  );
-  Widget yesButton = TextButton(
-    child: const Text("Yes"),
-    onPressed: () {
-      Navigator.of(context).pop();
-      requestNurseConfirmationAlertDialog(context);
-    },
-  );
+// void requestNurseEmergencyAlertDialog(BuildContext context) {
+//   Widget cancelButton = TextButton(
+//     child: const Text("Cancel"),
+//     onPressed: () {
+//       Navigator.of(context).pop();
+//     },
+//   );
+//   Widget noButton = TextButton(
+//     child: const Text("No"),
+//     onPressed: () {
+//       Navigator.of(context).pop();
+//       requestNurseConfirmationAlertDialog(context);
+//     },
+//   );
+//   Widget yesButton = TextButton(
+//     child: const Text("Yes"),
+//     onPressed: () {
+//       Navigator.of(context).pop();
+//       requestNurseConfirmationAlertDialog(context);
+//     },
+//   );
 
-  AlertDialog alert = AlertDialog(
-    title: const Text("Confirm request..."),
-    content: const Text("Is this an emergency?"),
-    actions: [
-      cancelButton,
-      noButton,
-      yesButton,
-    ],
-  );
+//   AlertDialog alert = AlertDialog(
+//     title: const Text("Confirm request..."),
+//     content: const Text("Is this an emergency?"),
+//     actions: [
+//       cancelButton,
+//       noButton,
+//       yesButton,
+//     ],
+//   );
 
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
-}
+//   showDialog(
+//     context: context,
+//     builder: (BuildContext context) {
+//       return alert;
+//     },
+//   );
+// }
 
 void requestNurseConfirmationAlertDialog(BuildContext context) {
   Widget okButton = TextButton(
