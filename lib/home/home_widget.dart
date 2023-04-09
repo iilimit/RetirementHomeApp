@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/mealplan/meal_plan_screen.dart';
 import 'package:project_1/messages/messages_widget.dart';
 import '../navigation/navigationbar_widget.dart';
 import '../requestNurse/request_nurse_widget.dart';
@@ -59,7 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         icon: const Icon(Icons.food_bank),
                         label: const Text('Meal Plan'),
                         onPressed: () {
-                          requestNurseAlertDialog(context);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const MealPlanPage(mytitle: 'Meal Plan')),
+                          );
                         })),
                 Container(
                   margin: const EdgeInsets.all(25),

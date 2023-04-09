@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../home/home_widget.dart';
 import '../login/login_widget.dart';
+import '../mealplan/meal_plan_screen.dart';
 import '../messages/messages_widget.dart';
 import '../requestNurse/request_nurse_widget.dart';
 
@@ -44,7 +45,14 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
           ListTile(
             leading: const Icon(Icons.food_bank),
             title: const Text('Meal Plan'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        const MealPlanPage(mytitle: 'Meal Plan')),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.message),
