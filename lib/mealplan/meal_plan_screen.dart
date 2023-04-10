@@ -11,6 +11,10 @@ class MealPlanPage extends StatefulWidget {
 }
 
 class _MealPlanPage extends State<MealPlanPage> {
+  void _refreshMeals() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
