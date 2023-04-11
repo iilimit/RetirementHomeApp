@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/mealplan/meal.dart';
 
 import '../navigation/navigationbar_widget.dart';
 import 'meal_plan_controller.dart';
@@ -24,54 +25,85 @@ class _MealPlanPage extends State<MealPlanPage> {
     var buttonTextStyle = const TextStyle(fontSize: 20);
 
     return Scaffold(
-      appBar: NavigationAppBar(title: "Meal Plan"),
-      drawer: NavigationMenu(),
-      body: Center(
-        child: ElevatedButton.icon(
+      appBar: const NavigationAppBar(title: "Meal Plan"),
+      drawer: const NavigationMenu(),
+      body: Column(children: [
+        ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
                 shape: roundedRectShape,
                 backgroundColor: Colors.red,
                 textStyle: buttonTextStyle),
-            icon: const Icon(Icons.person),
+            icon: const Icon(Icons.free_breakfast),
             label: const Text('View All Meals'),
-            onPressed: () {
-              // requestNurseAlertDialog(context);
+            onPressed: () async {
+              await MealPlanPage._myController.getAllMeals();
+              _refreshMeals();
             }),
-      ),
-    );
+        _MealPlanTable(MealPlanPage._myController, _refreshMeals)
+      ]
+          //
 
-    //   Column(children: [
-    //     Row(children: [
-    //       IconButton(
-    //         icon: const Icon(Icons.refresh),
-    //         onPressed: () async {
-    //           // await MealPlanPage._myController.getAllMeals();
-    //           // _refreshMeals();
-    //         },
-    //       ),
-    //       // _MealPlanTable(MealPlanPage._myController, _refreshMeals)
-    //     ])
-    //   ]);
-    // }
+          ),
+    );
+  }
+}
+
+class _MealPlanTable extends StatelessWidget {
+  final MealPlanController _myController;
+  final VoidCallback _refreshMeals;
+  const _MealPlanTable(this._myController, this._refreshMeals);
+
+  _createMealRows(List<Meal> mealList, BuildContext context) {
+    return mealList
+        .map((meal) => DataRow(cells: [
+              DataCell(Text('#${meal.id}')),
+              DataCell(Text('#${meal.type}')),
+              DataCell(Text('#${meal.combo}')),
+              DataCell(
+                ButtonBar(
+                  mainAxisSize: MainAxisSize
+                      .min, // this will take space as minimum as posible(to center)
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // _showaddresses(context, customer);
+                      },
+                      child: const Text('Create Order'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // _showDetails(context, meal);
+                      },
+                      child: const Text('Show Details'),
+                    ),
+                  ],
+                ),
+              ),
+            ]))
+        .toList();
   }
 
-// class _MealPlanTable extends StatelessWidget {
-//   final MealPlanController _myController;
-//   final VoidCallback _refreshMeals;
-//   const _MealPlanTable(this._myController, this._refreshMeals);
+  _createMealColumns() {
+    return [
+      const DataColumn(label: Text('ID')),
+      const DataColumn(label: Text('Type')),
+      const DataColumn(label: Text('Combo'))
+    ];
+  }
 
-//   _createMealColumns() {
-//     return [
-//       const DataColumn(label: Text('ID')),
-//       const DataColumn(label: Text('Type')),
-//       const DataColumn(label: Text('Combo'))
-//     ];
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // TODO: implement build
-//     throw UnimplementedError();
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<Meal>>(
+        future: _myController.getAllMeals(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: Text('Loading..'));
+          } else {
+            return Scrollbar(
+                child: DataTable(
+                    columns: _createMealColumns(),
+                    rows: _createMealRows(snapshot.data ?? [], context)));
+          }
+        });
+  }
 }

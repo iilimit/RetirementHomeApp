@@ -13,11 +13,9 @@ class MealPlanRepository {
   };
   Future<List<Meal>> getAllMeals() async {
     try {
-      var url = Uri.parse("http://localhost:8080/api/v1/meal/breakfast/");
+      var url = Uri.parse("http://localhost:8080/api/v1/meal/breakfast");
       var response = await http.get(url);
       if (response.statusCode == 200) {
-        //log("Statu ok'");
-        //log(response.body);
         Iterable meallistiterablejson = jsonDecode(response.body);
         List<Meal> mealList = List<Meal>.from(
             meallistiterablejson.map((data) => Meal.fromJson(data)));
