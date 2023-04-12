@@ -17,6 +17,7 @@ class MealPlanRepository {
       var response = await http.get(url);
       if (response.statusCode == 200) {
         Iterable meallistiterablejson = jsonDecode(response.body);
+        log(response.body);
         List<Meal> mealList = List<Meal>.from(
             meallistiterablejson.map((data) => Meal.fromJson(data)));
         //.toList();

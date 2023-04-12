@@ -33,13 +33,43 @@ class _MealPlanPage extends State<MealPlanPage> {
                 shape: roundedRectShape,
                 backgroundColor: Colors.red,
                 textStyle: buttonTextStyle),
-            icon: const Icon(Icons.free_breakfast),
+            icon: const Icon(Icons.local_dining),
             label: const Text('View All Meals'),
             onPressed: () async {
               await MealPlanPage._myController.getAllMeals();
               _refreshMeals();
             }),
-        _MealPlanTable(MealPlanPage._myController, _refreshMeals)
+        _MealPlanTable(MealPlanPage._myController, _refreshMeals),
+        ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+                shape: roundedRectShape,
+                backgroundColor: Colors.yellow,
+                textStyle: buttonTextStyle),
+            icon: const Icon(Icons.free_breakfast),
+            label: const Text('View All Breakfast'),
+            onPressed: () async {
+              _refreshMeals();
+            }),
+        ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+                shape: roundedRectShape,
+                backgroundColor: Colors.green,
+                textStyle: buttonTextStyle),
+            icon: const Icon(Icons.lunch_dining),
+            label: const Text('View All Lunches'),
+            onPressed: () async {
+              _refreshMeals();
+            }),
+        ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+                shape: roundedRectShape,
+                backgroundColor: Colors.blue,
+                textStyle: buttonTextStyle),
+            icon: const Icon(Icons.dinner_dining),
+            label: const Text('View All Dinners'),
+            onPressed: () async {
+              _refreshMeals();
+            })
       ]
           //
 
@@ -67,6 +97,7 @@ class _MealPlanTable extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         // _showaddresses(context, customer);
+                        _refreshMeals();
                       },
                       child: const Text('Create Order'),
                     ),
