@@ -10,9 +10,9 @@ class Meal {
   Meal.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     log(id);
-    // type = json['type'];
+    type = json['type'];
     // log("Type: $type");
-    // combo = json['combo'];
+    combo = json['combo'];
     // log("Combo: $combo");
   }
 

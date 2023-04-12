@@ -87,8 +87,8 @@ class _MealPlanTable extends StatelessWidget {
     return mealList
         .map((meal) => DataRow(cells: [
               DataCell(Text('#${meal.id}')),
-              DataCell(Text('#${meal.type}')),
-              DataCell(Text('#${meal.combo}')),
+              DataCell(Text(meal.type)),
+              DataCell(Text(meal.combo)),
               DataCell(
                 ButtonBar(
                   mainAxisSize: MainAxisSize
@@ -118,7 +118,8 @@ class _MealPlanTable extends StatelessWidget {
     return [
       const DataColumn(label: Text('ID')),
       const DataColumn(label: Text('Type')),
-      const DataColumn(label: Text('Combo'))
+      const DataColumn(label: Text('Combo')),
+      const DataColumn(label: Text('Actions'))
     ];
   }
 
@@ -129,7 +130,8 @@ class _MealPlanTable extends StatelessWidget {
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: Text('Loading..'));
-          } else {
+          } 
+          else {
             return Scrollbar(
                 child: DataTable(
                     columns: _createMealColumns(),
