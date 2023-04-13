@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../help_request/help_request.dart';
+
+// ignore: camel_case_types
+class requestNurse{
+  static String? requestType;
+}
+
+
 void requestNurseAlertDialog(BuildContext context) {
+  
   Widget cancelButton = TextButton(
     child: const Text("Cancel"),
     onPressed: () {
@@ -13,6 +22,7 @@ void requestNurseAlertDialog(BuildContext context) {
     onPressed: () {
       Navigator.of(context).pop();
       requestNurseConfirmationAlertDialog(context);
+      requestNurse.requestType = "Other";
     },
   );
 
@@ -21,6 +31,7 @@ void requestNurseAlertDialog(BuildContext context) {
     onPressed: () {
       Navigator.of(context).pop();
       requestNurseConfirmationAlertDialog(context);
+      requestNurse.requestType = "Medical";
     },
   );
 
@@ -41,46 +52,6 @@ void requestNurseAlertDialog(BuildContext context) {
     },
   );
 }
-
-// void requestNurseEmergencyAlertDialog(BuildContext context) {
-//   Widget cancelButton = TextButton(
-//     child: const Text("Cancel"),
-//     onPressed: () {
-//       Navigator.of(context).pop();
-//     },
-//   );
-//   Widget noButton = TextButton(
-//     child: const Text("No"),
-//     onPressed: () {
-//       Navigator.of(context).pop();
-//       requestNurseConfirmationAlertDialog(context);
-//     },
-//   );
-//   Widget yesButton = TextButton(
-//     child: const Text("Yes"),
-//     onPressed: () {
-//       Navigator.of(context).pop();
-//       requestNurseConfirmationAlertDialog(context);
-//     },
-//   );
-
-//   AlertDialog alert = AlertDialog(
-//     title: const Text("Confirm request..."),
-//     content: const Text("Is this an emergency?"),
-//     actions: [
-//       cancelButton,
-//       noButton,
-//       yesButton,
-//     ],
-//   );
-
-//   showDialog(
-//     context: context,
-//     builder: (BuildContext context) {
-//       return alert;
-//     },
-//   );
-// }
 
 void requestNurseConfirmationAlertDialog(BuildContext context) {
   Widget okButton = TextButton(
@@ -104,4 +75,9 @@ void requestNurseConfirmationAlertDialog(BuildContext context) {
       return alert;
     },
   );
+
+    _addHelpRequest(){
+    HelpRequest request = new HelpRequest();
+    request.type = requestNurse.requestType!;
+  }
 }
