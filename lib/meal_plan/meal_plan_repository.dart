@@ -46,4 +46,22 @@ class MealPlanRepository {
     }
     return [];
   }
+
+  Future<Meal> getMealByID(int id) async {
+    Meal meal = Meal();
+    try {
+      var url = Uri.parse("http://localhost:8080/api/v1/meal/$id");
+      log(url.toString());
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+          //log("Customer details Statu ok'");
+          //log(response.body);
+          meal = Meal.fromJson(jsonDecode(response.body));
+          return meal;
+      }
+    } catch (e) {
+      log("Error: $e");
+    }  
+    return meal;
+  }
 }
