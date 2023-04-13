@@ -29,4 +29,23 @@ class MealPlanRepository {
     }
     return [];
   }
+
+  Future<List<Meal>> getAllBreakfast() async {
+    try {
+      var url = Uri.parse("http://localhost:8080/api/v1/meal/breakfast");
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        Iterable meallistiterablejson = jsonDecode(response.body);
+        log(response.body);
+        List<Meal> mealList = List<Meal>.from(
+            meallistiterablejson.map((data) => Meal.fromJson(data)));
+        //.toList();
+        //log(clist.length.toString());
+        return mealList;
+      }
+    } catch (e) {
+      log("Error: $e");
+    }
+    return [];
+  }
 }

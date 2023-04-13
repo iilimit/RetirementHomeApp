@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/mealplan/meal.dart';
+import 'package:project_1/mealplan/view_all_meals_page.dart';
+import 'package:project_1/mealplan/view_breakfast_page.dart';
 
 import '../navigation/navigationbar_widget.dart';
 import 'meal_plan_controller.dart';
@@ -38,8 +40,14 @@ class _MealPlanPage extends State<MealPlanPage> {
             onPressed: () async {
               await MealPlanPage._myController.getAllMeals();
               _refreshMeals();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MealPlanAllMealsPage(
+                          mytitle: 'All Meals'
+                        )),
+              );
             }),
-        _MealPlanTable(MealPlanPage._myController, _refreshMeals),
         ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
                 shape: roundedRectShape,
@@ -48,7 +56,15 @@ class _MealPlanPage extends State<MealPlanPage> {
             icon: const Icon(Icons.free_breakfast),
             label: const Text('View All Breakfast'),
             onPressed: () async {
+              await MealPlanPage._myController.getAllBreakfast();
               _refreshMeals();
+                            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MealPlanBreakfastPage(
+                          mytitle: 'All Breakfast'
+                        )),
+              );
             }),
         ElevatedButton.icon(
             style: ElevatedButton.styleFrom(

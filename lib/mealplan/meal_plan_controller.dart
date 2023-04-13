@@ -9,4 +9,8 @@ class MealPlanController {
   Future<List<Meal>> getAllMeals() {
     return _mealPlanRepo.getAllMeals();
   }
+
+  Future<List<Meal>> getAllBreakfast() {
+    return _mealPlanRepo.getAllBreakfast();
+  }
 }
