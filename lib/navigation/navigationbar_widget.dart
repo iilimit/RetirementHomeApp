@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../home/home_widget.dart';
 import '../login/login_widget.dart';
-import '../mealplan/meal_plan_screen.dart';
+import '../meal_plan/meal_plan_screen.dart';
 import '../messages/messages_widget.dart';
 import '../requestNurse/request_nurse_widget.dart';
 
