@@ -28,6 +28,14 @@ void main() {
       expect({'id': 1, 'type': 'Breakfast', 'combo': 'Scammbled eggs, toast, sausage'}, meal.toJson());
     }
     );
+    test(
+      "Incomplete Meal convert toJson", 
+      () {
+      Meal meal = Meal();
+      meal.id = 1;
+      expect({'id': 1, 'type': '', 'combo': ''} , meal.toJson());
+      } 
+   );
   }
   );
 
