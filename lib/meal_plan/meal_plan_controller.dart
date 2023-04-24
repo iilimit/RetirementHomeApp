@@ -1,5 +1,5 @@
 import 'package:project_1/meal_plan/meal_plan_repository.dart';
-
+import 'package:http/http.dart' as http;
 import 'meal.dart';
 
 class MealPlanController {
@@ -14,7 +14,7 @@ class MealPlanController {
     return _mealPlanRepo.getAllBreakfast();
   }
 
-   Future<Meal> getMealByID(int id) {
-    return _mealPlanRepo.getMealByID(id);
+  Future<Meal> getMealByID(int id) {
+    return _mealPlanRepo.getMealByID(http.Client(), id);
   }
 }
