@@ -50,7 +50,8 @@ class MealPlanRepository {
   Future<Meal> getMealByID(http.Client client, int id) async {
     Meal meal = Meal();
     try {
-      var url = Uri.parse("http://localhost:8080/api/v1/meal/$id");
+      //Added breakfast to the URi but should fix api to not need mealtype
+      var url = Uri.parse("http://localhost:8080/api/v1/meal/breakfast/$id");
       log(url.toString());
       var response = await client.get(url);
       if (response.statusCode == 200) {
