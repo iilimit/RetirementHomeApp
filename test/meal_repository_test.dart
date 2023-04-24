@@ -25,6 +25,14 @@ main() {
     });
     //failed find getMealById
 
-    test("Failed call to getMealByID", () {});
+    test("Failed call to getMealByID", () async {
+      final client = MockClient();
+      MealPlanRepository mealRepo = MealPlanRepository();
+
+      when(client
+              .get(Uri.parse("http://localhost:8080/api/v1/meal/breakfast/11")))
+          .thenAnswer((_) async => http.Response('Not Found', 400));
+      expect(await mealRepo.getMealByID(client, 2), throwsException);
+    });
   });
 }

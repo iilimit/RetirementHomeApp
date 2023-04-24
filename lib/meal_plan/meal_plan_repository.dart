@@ -59,6 +59,8 @@ class MealPlanRepository {
         //log(response.body);
         meal = Meal.fromJson(jsonDecode(response.body));
         return meal;
+      } else {
+        throw Exception(response.statusCode);
       }
     } catch (e) {
       log("Error: $e");
