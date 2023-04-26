@@ -55,12 +55,11 @@ class MealPlanRepository {
       log(url.toString());
       var response = await client.get(url);
       if (response.statusCode == 200) {
-        //log("Customer details Statu ok'");
-        //log(response.body);
-        meal = Meal.fromJson(jsonDecode(response.body));
-        return meal;
-      } else {
-        throw Exception(response.statusCode);
+        if (response.body.isEmpty) {
+          throw Exception("Not found");
+        } else {
+          meal = Meal.fromJson(jsonDecode(response.body));
+        }
       }
     } catch (e) {
       log("Error: $e");
