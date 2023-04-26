@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "805821386957",
+    "project_id": "fir-retirement-app",
+    "storage_bucket": "fir-retirement-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805821386957:android:45408509dba4eb801a5984",
+        "android_client_info": {
+          "package_name": "com.example.project_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805821386957-p59bim46kaoq8ic9lj5i3m92ram9irud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwhvyf83LtotqQV5kUjzrdm-zvNtSOEM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805821386957-p59bim46kaoq8ic9lj5i3m92ram9irud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
