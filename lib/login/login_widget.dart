@@ -1,5 +1,8 @@
+import 'package:firebase_ui_auth/firebase_ui_auth.dart' as auth;
 import 'package:flutter/material.dart';
 import 'package:project_1/home/home_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutterfire_ui/auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -26,14 +29,54 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text("", textAlign: TextAlign.center)),
-      ),
-      body: Center(
-        child: _buildUI(context),
-      ),
-    );
+       return StreamBuilder<User?>(
+     stream: FirebaseAuth.instance.authStateChanges(),
+     builder: (context, snapshot) {
+       if (!snapshot.hasData) {
+         return SignInScreen(
+           providerConfigs: const [
+             EmailProviderConfiguration(),
+           ],
+           headerBuilder: (context, constraints, shrinkOffset) {
+             return Padding(
+               padding: const EdgeInsets.all(20),
+               child: AspectRatio(
+                 aspectRatio: 1,
+                 child: Image.asset('flutterfire_300x.png'),
+               ),
+             );
+           },
+           subtitleBuilder: (context, action) {
+             return Padding(
+               padding: const EdgeInsets.symmetric(vertical: 8.0),
+               child: action == AuthAction.signIn
+                   ? const Text('Welcome to My Customer App, please sign in!')
+                   : const Text('Welcome to My Customer App, please sign up!'),
+             );
+           },
+           footerBuilder: (context, action) {
+             return const Padding(
+               padding: EdgeInsets.only(top: 16),
+               child: Text(
+                 'By signing in, you agree to our terms and conditions.',
+                 style: TextStyle(color: Colors.grey),
+               ),
+             );
+           }, 
+         );
+       }
+
+       return const MyHomePage(title: "Home Screen");
+     },
+   );
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: const Center(child: Text("", textAlign: TextAlign.center)),
+    //   ),
+    //   body: Center(
+    //     child: _buildUI(context),
+    //   ),
+    // );
   }
 
   _buildUI(BuildContext context) {
