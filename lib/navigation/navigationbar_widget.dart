@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../home/home_widget.dart';
 import '../login/login_widget.dart';
+import '../map/map_screen.dart';
 import '../meal_plan/meal_plan_screen.dart';
 import '../messages/messages_widget.dart';
 import '../requestNurse/request_nurse_widget.dart';
@@ -76,6 +77,19 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.pin_drop),
+            title: const Text('Map'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MapPage(
+                          title: 'Map',
+                        )),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.logout),
