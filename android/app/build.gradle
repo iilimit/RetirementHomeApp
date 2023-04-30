@@ -6,6 +6,16 @@ if (localPropertiesFile.exists()) {
     }
 }
 
+// def dartEnvironmentVariables = []
+// if (project.hasProperty('dart-defines')) {
+//     dartEnvironmentVariables = project.property('dart-defines')
+//         .split(',')
+//         .collectEntries { entry ->
+//             def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
+//             [(pair.first()): pair.last()]
+//         }
+// }
+
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
     throw GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
@@ -51,6 +61,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        // manifestPlaceholders = [API_KEY: dartEnvironmentVariables.API_KEY]
     }
 
     buildTypes {
@@ -69,3 +80,5 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
+
