@@ -9,16 +9,16 @@ class MapPage extends StatefulWidget {
   const MapPage({Key? key, required String title}) : super(key: key);
 
   @override
-  State<MapPage> createState() => MapSampleState();
+  State<MapPage> createState() => _MapPageState();
 }
 
-class MapSampleState extends State<MapPage> {
+class _MapPageState extends State<MapPage> {
   final Completer<GoogleMapController> _controller =
       Completer<GoogleMapController>();
 
   static const CameraPosition _initalPosition = CameraPosition(
     target: LatLng(33.752098774130076, -84.39182326033728),
-    zoom: 14.4746,
+    zoom: 11.4746,
   );
 
   static const Marker _gaAquariumMarker = Marker(
@@ -32,12 +32,6 @@ class MapSampleState extends State<MapPage> {
       infoWindow: InfoWindow(title: 'World of Coca-Cola'),
       icon: BitmapDescriptor.defaultMarker,
       position: LatLng(33.76267718733346, -84.39160558829732));
-
-  static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +47,5 @@ class MapSampleState extends State<MapPage> {
         },
       ),
     );
-  }
-
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }

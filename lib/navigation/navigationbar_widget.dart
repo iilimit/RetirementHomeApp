@@ -5,6 +5,7 @@ import '../map/map_screen.dart';
 import '../meal_plan/meal_plan_screen.dart';
 import '../messages/messages_widget.dart';
 import '../requestNurse/request_nurse_widget.dart';
+import '../camera/camera_screen.dart';
 
 class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
   const NavigationMenu({
@@ -87,6 +88,19 @@ class NavigationMenu extends StatelessWidget implements PreferredSizeWidget {
                 MaterialPageRoute(
                     builder: (context) => const MapPage(
                           title: 'Map',
+                        )),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.camera_alt),
+            title: const Text('Camera'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CameraPage(
+                          title: 'Camera',
                         )),
               );
             },
