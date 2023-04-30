@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_1/home/home_widget.dart';
 
 import '../navigation/navigationbar_widget.dart';
 
