@@ -21,11 +21,18 @@ class MapSampleState extends State<MapPage> {
     zoom: 14.4746,
   );
 
-  static final Marker _gaAquariumMarker = const Marker(
+  static const Marker _gaAquariumMarker = Marker(
       markerId: MarkerId('_gaAquariumMarker'),
       infoWindow: InfoWindow(title: 'Georgia Aquarium'),
       icon: BitmapDescriptor.defaultMarker,
       position: LatLng(33.763501097617166, -84.39459827012271));
+
+  static const Marker _gaCocaColaMarker = Marker(
+      markerId: MarkerId('_gaCocaColaMarker'),
+      infoWindow: InfoWindow(title: 'World of Coca-Cola'),
+      icon: BitmapDescriptor.defaultMarker,
+      position: LatLng(33.76267718733346, -84.39160558829732));
+
   static const CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
       target: LatLng(37.43296265331129, -122.08832357078792),
@@ -39,7 +46,7 @@ class MapSampleState extends State<MapPage> {
       drawer: const NavigationMenu(),
       body: GoogleMap(
         mapType: MapType.hybrid,
-        markers: {_gaAquariumMarker},
+        markers: {_gaAquariumMarker, _gaCocaColaMarker},
         initialCameraPosition: _initalPosition,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
