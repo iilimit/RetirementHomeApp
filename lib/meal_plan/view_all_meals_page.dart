@@ -17,19 +17,22 @@ class _MealPlanAllMealPage extends State<MealPlanAllMealsPage> {
   void _refreshMeals() {
     setState(() {});
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: const NavigationAppBar(title: "Meal Plan"),
       drawer: const NavigationMenu(),
-      body: 
-      Column(children: [
+      body: Column(children: [
         Container(
-          alignment: Alignment.centerLeft,
-          child: IconButton(icon: const Icon(Icons.refresh), onPressed: () async { await MealPlanAllMealsPage._myController.getAllMeals();
-                    _refreshMeals(); },)
-        ),
+            alignment: Alignment.centerLeft,
+            child: IconButton(
+              icon: const Icon(Icons.refresh),
+              onPressed: () async {
+                await MealPlanAllMealsPage._myController.getAllMeals();
+                _refreshMeals();
+              },
+            )),
         _MealPlanTable(MealPlanAllMealsPage._myController, _refreshMeals),
       ]),
     );
@@ -88,8 +91,7 @@ class _MealPlanTable extends StatelessWidget {
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: Text('Loading..'));
-          } 
-          else {
+          } else {
             return Scrollbar(
                 child: DataTable(
                     columns: _createMealColumns(),
