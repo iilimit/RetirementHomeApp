@@ -6,16 +6,6 @@ if (localPropertiesFile.exists()) {
     }
 }
 
-// def dartEnvironmentVariables = []
-// if (project.hasProperty('dart-defines')) {
-//     dartEnvironmentVariables = project.property('dart-defines')
-//         .split(',')
-//         .collectEntries { entry ->
-//             def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
-//             [(pair.first()): pair.last()]
-//         }
-// }
-
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
     throw GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
@@ -33,7 +23,6 @@ if (flutterVersionName == null) {
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.secrets_gradle_plugin' version '2.0.1'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
