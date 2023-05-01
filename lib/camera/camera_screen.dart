@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class _CameraPageState extends State<CameraPage> {
       }
       setState(() {});
     }).catchError((e) {
-      print(e);
+      throw (e);
     });
   }
 
@@ -49,10 +50,36 @@ class _CameraPageState extends State<CameraPage> {
           appBar: const NavigationAppBar(title: "Meal Plan"),
           drawer: const NavigationMenu(),
           body: Stack(
-            children: [CameraPreview(cameraController)],
+            children: [
+              CameraPreview(cameraController),
+              FloatingActionButton(
+                onPressed: () async {
+                  final image = await cameraController.takePicture();
+                  // ignore: use_build_context_synchronously
+                  await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          DisplayPictureScreen(imagePath: image.path)));
+                },
+                child: const Icon(Icons.camera_alt),
+              )
+            ],
           ));
     } else {
       return const SizedBox();
     }
+  }
+}
+
+class DisplayPictureScreen extends StatelessWidget {
+  final String imagePath;
+
+  const DisplayPictureScreen({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Displaying the Picture')),
+      body: Image.file(File(imagePath)),
+    );
   }
 }
